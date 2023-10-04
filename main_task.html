@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+    <head>
+        <script src="./jspsych/jspsych.js"></script>
+        <script src="jspsych/plugin-html-button-response.js"></script>
+        <script src="jspsych/plugin-html-keyboard-response.js"></script>
+        <!-- Use custom css. Same as jsPsych css, with some additions. -->
+        <link href="./_custom.css" rel="stylesheet"></link>
+
+        <script>
+            var jsPsych = initJsPsych({
+              experiment_width: 900,
+              on_finish: function() {
+                jsPsych.data.displayData();
+              },
+            });
+        </script>
+    </head>
+
+    <body></body>
+
+    <script src="./main_task.js"></script>
+
+    <script>
+        timeline = [...learningBlock];
+        jsPsych.run(timeline)
+    </script>
+
+</html>
